@@ -16,5 +16,6 @@ namespace PeakApps.Interface
         int GetLoadTimeOut();
         string GetFacilityName();
         string GetFacilityNameForDataEntry();
+        string GetFacilityNameForHealthSystem();
     }
 }

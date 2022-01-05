@@ -52,7 +52,7 @@ namespace PeakApps.Common
         }
         public void clickLogout()
         {
-            Thread.Sleep(5000);
+            Thread.Sleep(7000);
             ObjectRepository.driver.FindElement(badge).Click();
             ObjectRepository.driver.FindElement(logout).Click();
         }

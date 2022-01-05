@@ -333,6 +333,12 @@ namespace PeakApps.Custom_Class
 
         }
 
+        public void toggleSwitch()
+        {
+            ObjectRepository.driver.FindElement(By.XPath("//label[text()='Health System Data']")).Click();
+           
+        }
+
 
          }
 }

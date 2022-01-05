@@ -72,7 +72,7 @@ namespace PeakApps.Common
 
             for (int i = 0; i <= countFacility; i++)
             {
-
+                Thread.Sleep(2000);
                 string SelectFacility = storeFacility[i].Text;
                 if (SelectFacility.Contains(ObjectRepository.config.GetFacilityNameForDataEntry()))
                 {
@@ -80,6 +80,29 @@ namespace PeakApps.Common
                     break;
                 }
                 
+            }
+
+        }
+
+        public void SelectFacilityForHealthSystem()
+        {
+            Thread.Sleep(3000);
+            ObjectRepository.driver.FindElement(FacilityDropdown).Click();
+            IList<IWebElement> storeFacility = null;
+            storeFacility = ObjectRepository.driver.FindElements(FacilityList);
+            int countFacility = storeFacility.Count;
+
+
+            for (int i = 0; i <= countFacility; i++)
+            {
+
+                string SelectFacility = storeFacility[i].Text;
+                if (SelectFacility.Contains(ObjectRepository.config.GetFacilityNameForHealthSystem()))
+                {
+                    storeFacility[i].Click();
+                    break;
+                }
+
             }
 
         }

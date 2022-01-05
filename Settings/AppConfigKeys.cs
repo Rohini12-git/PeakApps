@@ -15,5 +15,6 @@ namespace PeakApps.Settings
         public const string loadTimeOut = "LoadTimeOut";
         public const string facilityName = "FacilityName";
         public const string facilityforDataEntry = "FacilityForDataEntry";
+        public const string facilityforHealthSystem = "HealthSystemFacilityName";
     }
 }

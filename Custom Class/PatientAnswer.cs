@@ -54,6 +54,7 @@ namespace PeakApps.Custom_Class
         }
         public void Policy3N()
         {
+            Thread.Sleep(2000);
             ObjectRepository.driver.FindElement(By.XPath("//button[contains(text(),'Next')]")).Click();
             ObjectRepository.driver.FindElement(By.XPath("//button[contains(text(),'Next')]")).Click();
             ObjectRepository.driver.FindElement(By.XPath("//button[contains(text(),'Next')]")).Click();
@@ -126,7 +127,7 @@ namespace PeakApps.Custom_Class
             string ActivePolicy = DataModal.policy.PolicyName;
             ReadExcelClass.DataEntryExcel();
             ReadExcelClass.DataEntry3DPolicy();
-            ReadExcelClass.excelQuit();
+            ReadExcelClass.excelClose();
 
 
         }
@@ -164,6 +165,7 @@ namespace PeakApps.Custom_Class
             }
             string activePolicy = DataModal.activePolicy;
             var compareList = DataModal.dataentryQs.Except(list).ToList();
+            
             if (compareList.Count==0)
             {
               
@@ -227,17 +229,32 @@ namespace PeakApps.Custom_Class
             }
             else
             {
-                 Thread.Sleep(3000);
-                var endAudit = ObjectRepository.driver.FindElement(By.XPath("//button[@name='EndAudit']"));
-                endAudit.Click();
+                    Thread.Sleep(3000);
+                    var endAudit = ObjectRepository.driver.FindElement(By.XPath("//button[@name='EndAudit']"));
+
+                    
+                        endAudit.Click();
+                   
+                   
+                        
             }
 
+
             }
+            else
+            {
+                ObjectRepository.driver.FindElement(By.XPath("//button[text()=' Cancel ']")).Click();
+                ObjectRepository.driver.FindElement(By.XPath("//button[text()='Yes']")).Click();
+
+                Assert.Fail("Data Entry Question does not matched.");
+
+            }
+
         }
 
-       
 
-        
+
+
 
     }
 }

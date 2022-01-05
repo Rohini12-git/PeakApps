@@ -48,5 +48,9 @@ namespace PeakApps.Configuration
         {
             return ConfigurationManager.AppSettings.Get(AppConfigKeys.facilityforDataEntry);
         }
+        public string GetFacilityNameForHealthSystem()
+        {
+            return ConfigurationManager.AppSettings.Get(AppConfigKeys.facilityforHealthSystem);
+        }
     }
 }

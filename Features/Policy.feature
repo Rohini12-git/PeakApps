@@ -46,8 +46,10 @@ Then policy name name should prompt in active poliy drop down as selected.
 
 Scenario: 05 Verify Create Policy for health system
 Given Policy tab redirect link
-When select a health system facility from facility drop down
+When select a health system's facility from facility drop down
+And switch to health system toggle
 And click on create policy button
 Then create Policy page open
+
 
 

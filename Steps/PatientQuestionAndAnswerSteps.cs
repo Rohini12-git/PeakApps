@@ -1,6 +1,7 @@
 ﻿using PeakApps.Common;
 using PeakApps.Custom_Class;
 using System;
+using System.Threading;
 using TechTalk.SpecFlow;
 
 namespace PeakApps.Steps
@@ -28,6 +29,7 @@ namespace PeakApps.Steps
         [Given(@"Activate a (.*) to edit")]
         public void GivenActivateAToEdit(string policyName)
         {
+            
             entry.ActivePolicy(policyName);
         }
 

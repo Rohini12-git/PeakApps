@@ -140,6 +140,20 @@ namespace PeakApps.Steps
             Thread.Sleep(3000);
         }
 
+        [When(@"select a health system's facility from facility drop down")]
+        public void WhenSelectAHealthSystemSFacilityFromFacilityDropDown()
+        {
+            CommonUtility selectFacility = new CommonUtility();
+            selectFacility.SelectFacilityForHealthSystem();
+        }
+
+        [When(@"switch to health system toggle")]
+        public void WhenSwitchToHealthSystemToggle()
+        {
+            policy.toggleSwitch();
+        }
+
+
 
     }
 }

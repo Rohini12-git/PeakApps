@@ -184,6 +184,28 @@ testRunner.Then("policy name name should prompt in active poliy drop down as sel
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("05 Verify Create Policy for health system")]
+        public virtual void _05VerifyCreatePolicyForHealthSystem()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("05 Verify Create Policy for health system", null, ((string[])(null)));
+#line 47
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 48
+testRunner.Given("Policy tab redirect link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 49
+testRunner.When("select a health system\'s facility from facility drop down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 50
+testRunner.And("switch to health system toggle", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 51
+testRunner.And("click on create policy button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 52
+testRunner.Then("create Policy page open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore
