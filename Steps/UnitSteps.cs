@@ -43,6 +43,7 @@ namespace PeakApps.Steps
             Assert.AreEqual(unit.GetTextOfMakeInactive(), "Make Inactive");
 
         }
+
         [When(@"enter the text like ""(.*)"" in unit search input box")]
         public void WhenEnterTheTextLikeInUnitSearchInputBox(string search)
         {
@@ -54,8 +55,18 @@ namespace PeakApps.Steps
             unit.VerifySearch(search);
         }
 
+        [Then(@"click on active button of any units to make them active")]
+        public void ThenClickOnActiveButtonOfAnyUnitsToMakeThemActive()
+        {
+            unit.ClickactiveButton();
+        }
 
-        
+        [Then(@"it should prompt a sucess message""(.*)""")]
+        public void ThenItShouldPromptASucessMessage(string p0)
+        {
+            unit.MessageOnButtonClick();
+        }
+
 
         [When(@"click on inactive button")]
         public void WhenClickOnInactiveButton()

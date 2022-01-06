@@ -29,7 +29,7 @@ namespace PeakApps.Custom_Class
         By MakeActive = By.XPath("//span[text()='Make Active']");
         By Search = By.XPath("//input[@id='search']");
         By UnitsList= By.XPath("//div[@class='column-left']");
-        By InactiveButton =By.XPath("//li//div//div[2]");
+        By InactiveActiveButton =By.XPath("//li//div//div[2]");
         By sucess_message = By.XPath("//div[@class='message']");
         By EditButton = By.XPath("//li//div//div[@class='column-fixed'][2]");
         By UnitText = By.XPath("//div[@class='header']");
@@ -105,7 +105,7 @@ namespace PeakApps.Custom_Class
         {
             Thread.Sleep(5000);
             IList<IWebElement> InactiveButtons = null;
-            InactiveButtons = ObjectRepository.driver.FindElements(InactiveButton);
+            InactiveButtons = ObjectRepository.driver.FindElements(InactiveActiveButton);
             
             int count = InactiveButtons.Count;
             //WebDriverWait wait = new WebDriverWait(ObjectRepository.driver, TimeSpan.FromSeconds(10));
@@ -117,7 +117,23 @@ namespace PeakApps.Custom_Class
             return alertMessage;
             
         }
-     
+        public string ClickactiveButton()
+        {
+            Thread.Sleep(5000);
+            IList<IWebElement> InactiveButtons = null;
+            InactiveButtons = ObjectRepository.driver.FindElements(InactiveActiveButton);
+
+            int count = InactiveButtons.Count;
+            //WebDriverWait wait = new WebDriverWait(ObjectRepository.driver, TimeSpan.FromSeconds(10));
+            //IWebElement firstResult = wait.Until(e => e.FindElement(By.XPath("//a/h3")));
+
+            //Console.WriteLine(firstResult.Text);
+            InactiveButtons[count - 1].Click();
+            string alertMessage = ObjectRepository.driver.FindElement(sucess_message).Text;
+            return alertMessage;
+
+        }
+
         public void MessageOnButtonClick( )
         {
             

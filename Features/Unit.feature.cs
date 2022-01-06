@@ -142,20 +142,40 @@ testRunner.Then("it  should search all the units contain word \"unit\"", ((strin
         }
         
         [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("05. Verify active button of unit")]
+        public virtual void _05_VerifyActiveButtonOfUnit()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("05. Verify active button of unit", null, ((string[])(null)));
+#line 31
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 32
+testRunner.Given("Unit tab redirect link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 33
+testRunner.When("click on inactive,it redirect to inactive tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 34
+testRunner.Then("click on active button of any units to make them active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 35
+testRunner.And("it should prompt a sucess message\"The unit was modified successfully.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("06 Verify Edit Button")]
         public virtual void _06VerifyEditButton()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("06 Verify Edit Button", null, ((string[])(null)));
-#line 32
+#line 37
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 33
+#line 38
 testRunner.Given("Unit tab redirect link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 34
+#line 39
 testRunner.When("click on Edit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 35
+#line 40
 testRunner.Then("it should redirect to edit page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 36
+#line 41
 testRunner.And("if it redirect then close the page to verify close button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -166,20 +186,20 @@ testRunner.And("if it redirect then close the page to verify close button", ((st
         public virtual void _07VerifyEditPage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("07 Verify Edit Page", null, ((string[])(null)));
-#line 38
+#line 43
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 39
-testRunner.Given("Unit tab redirect link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 40
-testRunner.When("click on Edit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 41
-testRunner.Then("it should redirect to edit page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 42
-testRunner.When("edit the unit name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 43
-testRunner.And("click on save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 44
+testRunner.Given("Unit tab redirect link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 45
+testRunner.When("click on Edit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 46
+testRunner.Then("it should redirect to edit page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 47
+testRunner.When("edit the unit name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 48
+testRunner.And("click on save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 49
 testRunner.Then("it should prompt sucess message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -190,14 +210,14 @@ testRunner.Then("it should prompt sucess message", ((string)(null)), ((TechTalk.
         public virtual void _08VerifyEnableCreateUnitButton()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("08 Verify  Enable Create Unit button", null, ((string[])(null)));
-#line 46
+#line 51
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 47
+#line 52
 testRunner.Given("Unit tab redirect link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 48
+#line 53
 testRunner.When("select a facility", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 49
+#line 54
 testRunner.Then("it should enable create unit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -208,18 +228,18 @@ testRunner.Then("it should enable create unit", ((string)(null)), ((TechTalk.Spe
         public virtual void _09VerifyCreateUnitButton()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("09 Verify Create Unit button", null, ((string[])(null)));
-#line 51
+#line 56
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 52
+#line 57
 testRunner.Given("Unit tab redirect link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 53
+#line 58
 testRunner.When("select a facility", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 54
+#line 59
 testRunner.And("click on Create Unit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 55
+#line 60
 testRunner.Then("it should redirect to Create Unit Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 56
+#line 61
 testRunner.And("if it redirect then close the page to verify close button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -230,22 +250,22 @@ testRunner.And("if it redirect then close the page to verify close button", ((st
         public virtual void _10VerifyCreateUnitPageFunctionality()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("10 Verify create unit page functionality", null, ((string[])(null)));
-#line 58
+#line 63
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 59
-testRunner.Given("Unit tab redirect link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 60
-testRunner.When("select a facility", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 61
-testRunner.And("click on Create Unit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 62
-testRunner.Then("it should redirect to Create Unit Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 63
-testRunner.When("enter unit name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 64
-testRunner.And("click on create button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Given("Unit tab redirect link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 65
+testRunner.When("select a facility", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 66
+testRunner.And("click on Create Unit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 67
+testRunner.Then("it should redirect to Create Unit Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 68
+testRunner.When("enter unit name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 69
+testRunner.And("click on create button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 70
 testRunner.Then("it should prompt a message \"The unit was created successfully.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

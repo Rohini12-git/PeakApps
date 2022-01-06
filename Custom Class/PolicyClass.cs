@@ -27,8 +27,8 @@ namespace PeakApps.Custom_Class
         By EditButton = By.XPath("//li//div//div[@class='column-fixed'][2]");
         By CreatePolicyButton = By.XPath("//button//span[text()='Create Policy']");
         By AuditType = By.XPath("//select[@name='auditType']");
-        By PolicyName=By.XPath("//input[@name='name']");
-        By NextButton= By.XPath("//button[contains(text(),'Next')]");
+        By PolicyName = By.XPath("//input[@name='name']");
+        By NextButton = By.XPath("//button[contains(text(),'Next')]");
         By yellowComplianceRate = By.XPath("//label[@class='showRate'][1]");
         By greenComplianceRate = By.XPath("//label[@class='showRate'][2]");
         By yellowComplianceInput = By.XPath("//input[@name='minimumComplianceRateYellow']");
@@ -48,6 +48,8 @@ namespace PeakApps.Custom_Class
         By policiesNameList = By.XPath("//div[@class='column-flex']//span");
         By FacilityDropdown = By.XPath("//section[@class='facility-selector']//span");
         By FacilityList = By.XPath("//span[@class='facility-options-text']");
+        By viewPrintButton = By.XPath("//div[@class='button-container']");
+        By popupmenuOption = By.XPath("//div[contains(@class,'popup-menu-option')]");
 
 
 
@@ -58,8 +60,8 @@ namespace PeakApps.Custom_Class
         string questionText { get; set; }
         string policyName { get; set; }
         string text { get; set; }
-       string ActivePolicytext { get; set; }
-       string HSName { get; set; }
+        string ActivePolicytext { get; set; }
+        string HSName { get; set; }
 
 
 
@@ -72,17 +74,17 @@ namespace PeakApps.Custom_Class
             String actualURL = ObjectRepository.driver.Url;
             string Url = "https://peakqa.3m.com/#/policy";
             string DEUrl = "https://peakqa.3m.com/#/data-entry";
-            if (actualURL==Url)
+            if (actualURL == Url)
             {
                 Console.WriteLine("Don't click");
-            }else if (actualURL==DEUrl)
-            
+            } else if (actualURL == DEUrl)
+
             {
                 WebDriverWait wait = new WebDriverWait(ObjectRepository.driver, TimeSpan.FromSeconds(10));
                 IWebElement firstResult = wait.Until(e => e.FindElement(By.XPath("//p[text()='Audit Setup']")));
                 Thread.Sleep(10000);
 
-                
+
                 ObjectRepository.driver.FindElement(By.XPath("//p[text()='Audit Setup']")).Click();
             }
             else
@@ -104,7 +106,7 @@ namespace PeakApps.Custom_Class
         public string GetText()
         {
             Thread.Sleep(2000);
-            string text=ObjectRepository.driver.FindElement(CreatePolicyText).Text;
+            string text = ObjectRepository.driver.FindElement(CreatePolicyText).Text;
             return text;
 
         }
@@ -112,8 +114,8 @@ namespace PeakApps.Custom_Class
         {
             CommonUtility common = new CommonUtility();
             string policyName = "Audit" + common.GenerateRandomString();
-            var selectAudit=ObjectRepository.driver.FindElement(AuditType);
-            var selectElement = new SelectElement(selectAudit);           
+            var selectAudit = ObjectRepository.driver.FindElement(AuditType);
+            var selectElement = new SelectElement(selectAudit);
             selectElement.SelectByText("Comprehensive Audit/Point Prevalence");
             ObjectRepository.driver.FindElement(PolicyName).SendKeys(policyName);
             return policyName;
@@ -140,36 +142,36 @@ namespace PeakApps.Custom_Class
         {
             ObjectRepository.driver.FindElement(NextButton).Click();
         }
-        public  void compliance_rate()
+        public void compliance_rate()
 
         {
-            
-            var yellowComplianceValue= Convert.ToInt32(ObjectRepository.driver.FindElement(yellowComplianceInput).GetAttribute("value"));
+
+            var yellowComplianceValue = Convert.ToInt32(ObjectRepository.driver.FindElement(yellowComplianceInput).GetAttribute("value"));
             var greenComplianceValue = Convert.ToInt32(ObjectRepository.driver.FindElement(greenComplianceInput).GetAttribute("value"));
-             //int Convert.ToInt32(yellowComplianceValue);
-            if (yellowComplianceValue > 75 && greenComplianceValue<85)
+            //int Convert.ToInt32(yellowComplianceValue);
+            if (yellowComplianceValue > 75 && greenComplianceValue < 85)
             {
-                bool acb=ObjectRepository.driver.FindElement(NextButton).Enabled;
+                bool acb = ObjectRepository.driver.FindElement(NextButton).Enabled;
                 if (acb)
                 {
                     Assert.Fail();
                 }
-                
+
             }
 
         }
 
         public string AuditScope()
         {
-            string text=ObjectRepository.driver.FindElement(AuditScopeText).Text;
+            string text = ObjectRepository.driver.FindElement(AuditScopeText).Text;
             return text;
-            
+
         }
-        
+
         public string AuditScopeQ3()
         {
-            
-            
+
+
             questionText = ObjectRepository.driver.FindElement(AuditQ3Text).Text;
             ObjectRepository.driver.FindElement(AuditQ3Text).Click();
             ClickNext();
@@ -177,11 +179,11 @@ namespace PeakApps.Custom_Class
             return questionText;
 
         }
-        
+
         public string SummaryPage()
         {
             string qsText = questionText;
-            string summaryText= ObjectRepository.driver.FindElement(Summary).Text;
+            string summaryText = ObjectRepository.driver.FindElement(Summary).Text;
             if (summaryText.Contains(qsText))
             {
                 Assert.IsTrue(true);
@@ -198,11 +200,11 @@ namespace PeakApps.Custom_Class
         {
             ObjectRepository.driver.FindElement(FinishAndActive).Click();
         }
-        
+
         public void ActivePolicy()
         {
-             ActivePolicytext = ObjectRepository.driver.FindElement(ActivePolicyName).Text;
-            DataModal.activePolicy=ActivePolicytext;
+            ActivePolicytext = ObjectRepository.driver.FindElement(ActivePolicyName).Text;
+            DataModal.activePolicy = ActivePolicytext;
 
             DataModal.policy = new Common.PolicyDataModal()
             {
@@ -214,12 +216,12 @@ namespace PeakApps.Custom_Class
         public string SetActivePolicy()
         {
             return ActivePolicytext;
-            
+
         }
 
-        public string  MatchQuestionHeader()
+        public string MatchQuestionHeader()
         {
-            string header=ObjectRepository.driver.FindElement(QuestionHeader).Text;
+            string header = ObjectRepository.driver.FindElement(QuestionHeader).Text;
             return header;
         }
         public static void Match21Daypolicy()
@@ -284,7 +286,7 @@ namespace PeakApps.Custom_Class
             }
             ReadExcelClass.excelQuit();
             //ReadExcelClass.excelClose();
-           
+
 
         }
         public void SelectRandomQs()
@@ -292,7 +294,7 @@ namespace PeakApps.Custom_Class
             IList<IWebElement> products = null;
             products = ObjectRepository.driver.FindElements(By.ClassName("checkbox-option"));
             int count = products.Count;
-            
+
 
             for (int i = 0; i < count; i++)
             {
@@ -328,7 +330,7 @@ namespace PeakApps.Custom_Class
                 var items = products[i];
                 Console.WriteLine(items.Text);
                 string actualvalue = items.Text;
-               
+
                 string Audi1 = ReadExcelClass.SubQsDetail3(rowCount);
                 Console.WriteLine(Audi1);
 
@@ -340,19 +342,19 @@ namespace PeakApps.Custom_Class
             }
             ReadExcelClass.excelQuit();
             //ReadExcelClass.excelClose();
-           
+
 
         }
 
         public void toggleSwitch()
         {
             ObjectRepository.driver.FindElement(switchtoggle).Click();
-           
+
         }
 
         public void VerifyHSName()
         {
-             HSName = ObjectRepository.driver.FindElement(healthsystemName).GetAttribute("value");
+            HSName = ObjectRepository.driver.FindElement(healthsystemName).GetAttribute("value");
             Console.WriteLine(HSName);
             if (ObjectRepository.config.GetFacilityNameForHealthSystem().Contains(HSName))
             {
@@ -360,14 +362,14 @@ namespace PeakApps.Custom_Class
             }
 
         }
-         public void HSPolicy()
+        public void HSPolicy()
         {
             Thread.Sleep(3000);
-            IList<IWebElement>policyList=ObjectRepository.driver.FindElements(policiesNameList).ToList();
-            string activePolicyName = ObjectRepository.driver.FindElement(ActivePolicyName).Text; 
+            IList<IWebElement> policyList = ObjectRepository.driver.FindElements(policiesNameList).ToList();
+            string activePolicyName = ObjectRepository.driver.FindElement(ActivePolicyName).Text;
             string healthSystemName = HSName;
 
-            string healthSystemPolicyName = string.Concat(activePolicyName ," - ", healthSystemName);
+            string healthSystemPolicyName = string.Concat(activePolicyName, " - ", healthSystemName);
             string[] allPolicy = new string[policyList.Count];
             int i = 0;
             foreach (IWebElement element in policyList)
@@ -382,7 +384,7 @@ namespace PeakApps.Custom_Class
             {
                 Assert.IsFalse(true);
             }
-          
+
         }
 
         public void SelectFacilityForHealthSystemPolicy()
@@ -405,7 +407,7 @@ namespace PeakApps.Custom_Class
                     {
                         storeFacility[i].Click();
                         IList<IWebElement> policyList = ObjectRepository.driver.FindElements(policiesNameList).ToList();
-                        
+
                         string[] allPolicy = new string[policyList.Count];
                         int k = 0;
                         foreach (IWebElement element in policyList)
@@ -422,10 +424,21 @@ namespace PeakApps.Custom_Class
 
 
 
-        public void HSFacilityPolicy()
+        public void EnableViewPrint()
         {
+            bool isEnableViewPrint = ObjectRepository.driver.FindElement(viewPrintButton).Enabled;
+            Assert.IsTrue(isEnableViewPrint, "View/Print button is enable");
 
         }
+        public void ClickViewPrint()
+        {
+            ObjectRepository.driver.FindElement(viewPrintButton).Click();
+            IList<IWebElement> options = ObjectRepository.driver.FindElements(popupmenuOption);
+            string option1 = options[1].Text;
+            string option2 = options[2].Text;
+
+        }
+    
 
          }
 }

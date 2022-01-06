@@ -72,5 +72,12 @@ Then goto facility page to get the facilities having name attached with that hs
 
 Given Policy tab redirect link
 
+Scenario: 07 Verify view/print of active policy
+Given Policy tab redirect link
+When select a health system's facility from facility drop down
+Then view/print button of active policy get enabled
+Then click on button to verify that popup menu should open with "Policy" and "Audit Form" as option.
+
+
 
 

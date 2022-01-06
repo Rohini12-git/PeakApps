@@ -165,6 +165,18 @@ namespace PeakApps.Steps
         {
             policy.HSPolicy();
         }
+        [Then(@"view/print button of active policy get enabled")]
+        public void ThenViewPrintButtonOfActivePolicyGetEnabled()
+        {
+            ScenarioContext.Current.Pending();
+        }
+
+        [Then(@"click on button to verify that popup menu should open with ""(.*)"" and ""(.*)"" as option\.")]
+        public void ThenClickOnButtonToVerifyThatPopupMenuShouldOpenWithAndAsOption_(string p0, string p1)
+        {
+            ScenarioContext.Current.Pending();
+        }
+
 
     }
 }

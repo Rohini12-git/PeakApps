@@ -19,7 +19,7 @@ Examples:
 | CustomPolicy|
 
 
-Scenario Outline: Audit Scope and Data Entry
+Scenario Outline: Verify Edit Audit Scope and Data Entry
 Given Policy tab redirect link
 And select a facility from facility drop down
 And Activate a <Policy> to edit

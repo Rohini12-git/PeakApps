@@ -28,11 +28,11 @@ Given Unit tab redirect link
 When enter the text like "unit" in unit search input box
 Then it  should search all the units contain word "unit" 
 
-Scenario: 4. Verify active button of unit    
+Scenario: 05. Verify active button of unit    
 Given Unit tab redirect link
 When click on inactive,it redirect to inactive tab
 Then click on active button of any units to make them active
-And it should prompt a sucess message
+And it should prompt a sucess message"The unit was modified successfully."
 
 Scenario: 06 Verify Edit Button
 Given Unit tab redirect link
