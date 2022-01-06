@@ -25,9 +25,14 @@ Then click on active,it should  return to active tab
 
 Scenario: 04 Verify search functonality 
 Given Unit tab redirect link
-When enter the text like "test" in unit search input box
-Then it  should search all the units contain word test 
+When enter the text like "unit" in unit search input box
+Then it  should search all the units contain word "unit" 
 
+Scenario: 4. Verify active button of unit    
+Given Unit tab redirect link
+When click on inactive,it redirect to inactive tab
+Then click on active button of any units to make them active
+And it should prompt a sucess message
 
 Scenario: 06 Verify Edit Button
 Given Unit tab redirect link

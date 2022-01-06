@@ -16,6 +16,7 @@ namespace PeakApps.Steps
         [Given(@"Policy tab redirect link")]
         public void GivenPolicyTabRedirectLink()
         {
+            Thread.Sleep(3000);
             policy.RedirectToPolicy();
         }
         
@@ -153,7 +154,17 @@ namespace PeakApps.Steps
             policy.toggleSwitch();
         }
 
+        [Then(@"it should contains same health system name of which facility is selected\.")]
+        public void ThenItShouldContainsSameHealthSystemNameOfWhichFacilityIsSelected_()
+        {
+            policy.VerifyHSName();
+        }
 
+        [Then(@"Policy name should listed in policies with health system name  for which it is created")]
+        public void ThenPolicyNameShouldListedInPoliciesWithHealthSystemNameForWhichItIsCreated()
+        {
+            policy.HSPolicy();
+        }
 
     }
 }

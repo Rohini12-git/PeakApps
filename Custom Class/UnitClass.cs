@@ -21,14 +21,14 @@ namespace PeakApps.Custom_Class
             ObjectRepository.driver = driver;
 
         }
-        string searchText = "Test";
+        string searchText = "Unit";
         By UnitTab = By.XPath("//p[text()='Units']");      
         By Inactive = By.XPath("//span[text()='Inactive Units']");       
         By Active = By.XPath("//span[text()='Active Units']");
         By MakeInactive = By.XPath("//span[text()='Make Inactive']");
         By MakeActive = By.XPath("//span[text()='Make Active']");
         By Search = By.XPath("//input[@id='search']");
-        By UnitsList= By.XPath("//ul/li//div//div//span[contains(text(),'test')]");
+        By UnitsList= By.XPath("//div[@class='column-left']");
         By InactiveButton =By.XPath("//li//div//div[2]");
         By sucess_message = By.XPath("//div[@class='message']");
         By EditButton = By.XPath("//li//div//div[@class='column-fixed'][2]");
@@ -69,7 +69,7 @@ namespace PeakApps.Custom_Class
             string text = ObjectRepository.driver.FindElement(MakeActive).Text;
             return text;
         }
-       public void InputSearchText()
+       public void InputSearchText(string searchText)
         {
             
             ObjectRepository.driver.FindElement(Search).SendKeys(searchText);
@@ -77,7 +77,7 @@ namespace PeakApps.Custom_Class
             
         }
 
-        public void VerifySearch()
+        public void VerifySearch(string searchText)
         {
             IList<IWebElement> collection_units = ObjectRepository.driver.FindElements(UnitsList);
 
@@ -99,6 +99,7 @@ namespace PeakApps.Custom_Class
             }
 
             ObjectRepository.driver.FindElement(Search).Clear();
+            Thread.Sleep(2000);
         }
         public string ClickInactiveButton()
         {

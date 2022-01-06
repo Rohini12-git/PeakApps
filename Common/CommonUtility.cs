@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using PeakApps.Custom_Class;
 using PeakApps.Settings;
 using System;
 using System.Collections.Generic;
@@ -107,6 +108,6 @@ namespace PeakApps.Common
 
         }
 
-
+        
     }
 }

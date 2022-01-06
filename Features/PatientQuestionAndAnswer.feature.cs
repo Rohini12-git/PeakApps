@@ -19,6 +19,8 @@ namespace PeakApps.Features
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("F.PatientQuestionAndAnswer")]
+    [NUnit.Framework.CategoryAttribute("Regression")]
+    [NUnit.Framework.CategoryAttribute("test")]
     public partial class F_PatientQuestionAndAnswerFeature
     {
         
@@ -31,7 +33,9 @@ namespace PeakApps.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "F.PatientQuestionAndAnswer", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "F.PatientQuestionAndAnswer", null, ProgrammingLanguage.CSharp, new string[] {
+                        "Regression",
+                        "test"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -85,28 +89,28 @@ namespace PeakApps.Features
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Custom question Audit Scope and DataEntry", null, @__tags);
-#line 5
+#line 6
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 6
-testRunner.Given("Policy tab redirect link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 7
-testRunner.And("select a facility from facility drop down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Given("Policy tab redirect link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
-testRunner.And(string.Format("Activate  {0} to edit", customPolicy), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("select a facility from facility drop down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 9
-testRunner.When("Click on edit button of activated policy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.And(string.Format("Activate  {0} to edit", customPolicy), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
-testRunner.Then("Copy Policy page open with all the selected custom  question set", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.When("Click on edit button of activated policy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
-testRunner.Then("store question in a list and match with excel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("Copy Policy page open with all the selected custom  question set", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 12
-testRunner.Given("Redirect link of data entry tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Then("store question in a list and match with excel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 13
-testRunner.When("enter the facility,date,shift and unit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.Given("Redirect link of data entry tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 14
-testRunner.Then("dataentry page should open with set of answer of policy qs", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.When("enter the facility,date,shift and unit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 15
+testRunner.Then("dataentry page should open with set of answer of policy qs", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 16
 testRunner.Then("verify the policy qs and answer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -143,28 +147,28 @@ testRunner.Then("verify the policy qs and answer", ((string)(null)), ((TechTalk.
         public virtual void AuditScopeAndDataEntry(string policy, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Audit Scope and Data Entry", null, exampleTags);
-#line 21
+#line 22
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 22
-testRunner.Given("Policy tab redirect link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 23
-testRunner.And("select a facility from facility drop down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Given("Policy tab redirect link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 24
-testRunner.And(string.Format("Activate a {0} to edit", policy), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("select a facility from facility drop down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 25
-testRunner.When("Click on edit button of activated policy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.And(string.Format("Activate a {0} to edit", policy), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 26
-testRunner.Then("Copy Policy page open with all the selected question set", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.When("Click on edit button of activated policy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 27
-testRunner.Then("store question in a list and match with excel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("Copy Policy page open with all the selected question set", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 28
-testRunner.Given("Redirect link of data entry tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Then("store question in a list and match with excel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 29
-testRunner.When("enter the facility,date,shift and unit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.Given("Redirect link of data entry tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 30
-testRunner.Then("dataentry page should open with set of answer of policy qs", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.When("enter the facility,date,shift and unit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 31
+testRunner.Then("dataentry page should open with set of answer of policy qs", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 32
 testRunner.Then("verify the policy qs and answer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

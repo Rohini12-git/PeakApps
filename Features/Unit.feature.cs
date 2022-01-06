@@ -134,9 +134,9 @@ this.ScenarioInitialize(scenarioInfo);
 #line 27
 testRunner.Given("Unit tab redirect link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 28
-testRunner.When("enter the text like \"test\" in unit search input box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("enter the text like \"unit\" in unit search input box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 29
-testRunner.Then("it  should search all the units contain word test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("it  should search all the units contain word \"unit\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

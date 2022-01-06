@@ -44,16 +44,18 @@ namespace PeakApps.Steps
 
         }
         [When(@"enter the text like ""(.*)"" in unit search input box")]
-        public void WhenEnterTheTextLikeInUnitSearchInputBox(string p0)
+        public void WhenEnterTheTextLikeInUnitSearchInputBox(string search)
         {
-            unit.InputSearchText();
+            unit.InputSearchText(search);
+        }
+        [Then(@"it  should search all the units contain word ""(.*)""")]
+        public void ThenItShouldSearchAllTheUnitsContainWord(string search)
+        {
+            unit.VerifySearch(search);
         }
 
-        [Then(@"it  should search all the units contain word test")]
-        public void ThenItShouldSearchAllTheUnitsContainWordTest()
-        {
-            unit.VerifySearch();
-        }
+
+        
 
         [When(@"click on inactive button")]
         public void WhenClickOnInactiveButton()

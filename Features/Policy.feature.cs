@@ -19,6 +19,8 @@ namespace PeakApps.Features
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("E.Policy")]
+    [NUnit.Framework.CategoryAttribute("Regression")]
+    [NUnit.Framework.CategoryAttribute("test")]
     public partial class E_PolicyFeature
     {
         
@@ -31,7 +33,9 @@ namespace PeakApps.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "E.Policy", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "E.Policy", null, ProgrammingLanguage.CSharp, new string[] {
+                        "Regression",
+                        "test"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -76,12 +80,12 @@ namespace PeakApps.Features
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("01 Verify the Policy tab", null, new string[] {
                         "mytag"});
-#line 5
+#line 6
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 6
-testRunner.Given("Policy tab redirect link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 7
+testRunner.Given("Policy tab redirect link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 8
 testRunner.Then("it should redirect to the Policy page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -92,14 +96,14 @@ testRunner.Then("it should redirect to the Policy page", ((string)(null)), ((Tec
         public virtual void _02VerifyCreatePolicyButton_3MSuperAdmin()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("02 Verify Create Policy button - 3M Super Admin", null, ((string[])(null)));
-#line 9
+#line 10
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 11
- testRunner.Given("Policy tab redirect link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 12
- testRunner.When("select a facility from facility drop down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("Policy tab redirect link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 13
+ testRunner.When("select a facility from facility drop down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 14
  testRunner.Then("Create Policy button become enabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -110,34 +114,34 @@ this.ScenarioInitialize(scenarioInfo);
         public virtual void _03VerifyCreatePolicyForComprehensiveAuditType()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("03 Verify Create Policy for Comprehensive Audit type", null, ((string[])(null)));
-#line 15
+#line 16
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 16
-testRunner.Given("Policy tab redirect link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 17
-testRunner.When("select a facility from facility drop down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.Given("Policy tab redirect link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 18
-testRunner.And("click on create policy button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.When("select a facility from facility drop down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 19
-testRunner.Then("create Policy page open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And("click on create policy button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 20
-testRunner.When("select Audit type and enter policy name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.Then("create Policy page open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 21
-testRunner.And("click next button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.When("select Audit type and enter policy name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 22
-testRunner.Then("define minimum compliance rate", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And("click next button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 23
-testRunner.And("click on next button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Then("define minimum compliance rate", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 24
-testRunner.Then("Audit Scope Page open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And("click on next button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 25
-testRunner.Then("select any single qs and click next", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("Audit Scope Page open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 26
-testRunner.Then("next summary page open with all selected audit scope qs", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("select any single qs and click next", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 27
-testRunner.Then("click on finish and make active button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("next summary page open with all selected audit scope qs", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 28
+testRunner.Then("click on finish and make active button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 29
 testRunner.Then("policy name name should prompt in active poliy drop down as selected.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -148,38 +152,38 @@ testRunner.Then("policy name name should prompt in active poliy drop down as sel
         public virtual void _04VerifyCreatePolicyFor21_DayChallengeAuditType()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("04 Verify Create Policy for 21-Day Challenge Audit type", null, ((string[])(null)));
-#line 30
+#line 31
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 31
-testRunner.Given("Policy tab redirect link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 32
-testRunner.When("select a facility from facility drop down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.Given("Policy tab redirect link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 33
-testRunner.And("click on create policy button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.When("select a facility from facility drop down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 34
-testRunner.Then("create Policy page open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And("click on create policy button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 35
-testRunner.When("select 21-Day Audit type and enter policy name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.Then("create Policy page open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 36
-testRunner.And("click next button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.When("select 21-Day Audit type and enter policy name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 37
-testRunner.Then("define minimum compliance rate", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And("click next button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 38
-testRunner.And("click on next button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Then("define minimum compliance rate", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 39
-testRunner.When("21-Day Audit Scope Page open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.And("click on next button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 40
-testRunner.Then("compare the set of qs with excel and select one of that", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.When("21-Day Audit Scope Page open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 41
-testRunner.And("click on next button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Then("compare the set of qs with excel and select one of that", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 42
-testRunner.Then("Facility protocol set of qs appear match with excel and select one option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 43
 testRunner.And("click on next button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 43
+testRunner.Then("Facility protocol set of qs appear match with excel and select one option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 44
-testRunner.Then("click on finish and make active button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And("click on next button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 45
+testRunner.Then("click on finish and make active button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 46
 testRunner.Then("policy name name should prompt in active poliy drop down as selected.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -190,19 +194,64 @@ testRunner.Then("policy name name should prompt in active poliy drop down as sel
         public virtual void _05VerifyCreatePolicyForHealthSystem()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("05 Verify Create Policy for health system", null, ((string[])(null)));
-#line 47
+#line 48
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 48
-testRunner.Given("Policy tab redirect link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 49
-testRunner.When("select a health system\'s facility from facility drop down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.Given("Policy tab redirect link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 50
-testRunner.And("switch to health system toggle", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.When("select a health system\'s facility from facility drop down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 51
-testRunner.And("click on create policy button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("switch to health system toggle", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 52
+testRunner.And("click on create policy button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 53
 testRunner.Then("create Policy page open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 54
+testRunner.And("it should contains same health system name of which facility is selected.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 56
+testRunner.When("select Audit type and enter policy name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 57
+testRunner.And("click next button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 58
+testRunner.Then("define minimum compliance rate", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 59
+testRunner.And("click on next button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 60
+testRunner.Then("Audit Scope Page open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 62
+testRunner.Then("select any single qs and click next", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 63
+testRunner.Then("next summary page open with all selected audit scope qs", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 64
+testRunner.Then("click on finish and make active button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 65
+testRunner.Then("policy name name should prompt in active poliy drop down as selected.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 66
+testRunner.And("Policy name should listed in policies with health system name  for which it is cr" +
+                    "eated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("06 Verify that policy of health system should be listed in all the facility of th" +
+            "at health system")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
+        public virtual void _06VerifyThatPolicyOfHealthSystemShouldBeListedInAllTheFacilityOfThatHealthSystem()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("06 Verify that policy of health system should be listed in all the facility of th" +
+                    "at health system", null, new string[] {
+                        "ignore"});
+#line 69
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 70
+testRunner.Given("Facility tab redirect link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 71
+testRunner.Then("goto facility page to get the facilities having name attached with that hs", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 73
+testRunner.Given("Policy tab redirect link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -39,9 +39,18 @@ namespace PeakApps.Custom_Class
         By Summary = By.XPath("//div[@class='response-label']");
         By FinishAndActive = By.XPath("//button[@type='submit' and text()='Finish and Make Active']");
         By ActivePolicyName = By.XPath("//div//span[@class='option-label']");
+        //By ActivePolicyText = By.XPath("//span[@class='option-label']");
         By QuestionHeader = By.XPath("//span[@class='question']");
         By Question21Days = By.XPath("//div//input[@id='checkboxDPP.Q1.b']");
         By QuestionRadio = By.ClassName("radio-group-answer");
+        By switchtoggle = By.XPath("//label[text()='Health System Data']");
+        By healthsystemName = By.XPath("//input[@name='healthSystemList']");
+        By policiesNameList = By.XPath("//div[@class='column-flex']//span");
+        By FacilityDropdown = By.XPath("//section[@class='facility-selector']//span");
+        By FacilityList = By.XPath("//span[@class='facility-options-text']");
+
+
+
 
         // IList<IWebElement> AuditQs = null;
 
@@ -50,6 +59,7 @@ namespace PeakApps.Custom_Class
         string policyName { get; set; }
         string text { get; set; }
        string ActivePolicytext { get; set; }
+       string HSName { get; set; }
 
 
 
@@ -188,10 +198,11 @@ namespace PeakApps.Custom_Class
         {
             ObjectRepository.driver.FindElement(FinishAndActive).Click();
         }
+        
         public void ActivePolicy()
         {
              ActivePolicytext = ObjectRepository.driver.FindElement(ActivePolicyName).Text;
-            DataModal.activePolicyName.Add(ActivePolicytext);
+            DataModal.activePolicy=ActivePolicytext;
 
             DataModal.policy = new Common.PolicyDataModal()
             {
@@ -335,10 +346,86 @@ namespace PeakApps.Custom_Class
 
         public void toggleSwitch()
         {
-            ObjectRepository.driver.FindElement(By.XPath("//label[text()='Health System Data']")).Click();
+            ObjectRepository.driver.FindElement(switchtoggle).Click();
            
         }
 
+        public void VerifyHSName()
+        {
+             HSName = ObjectRepository.driver.FindElement(healthsystemName).GetAttribute("value");
+            Console.WriteLine(HSName);
+            if (ObjectRepository.config.GetFacilityNameForHealthSystem().Contains(HSName))
+            {
+                Assert.IsTrue(true, "Health system name exists");
+            }
+
+        }
+         public void HSPolicy()
+        {
+            Thread.Sleep(3000);
+            IList<IWebElement>policyList=ObjectRepository.driver.FindElements(policiesNameList).ToList();
+            string activePolicyName = ObjectRepository.driver.FindElement(ActivePolicyName).Text; 
+            string healthSystemName = HSName;
+
+            string healthSystemPolicyName = string.Concat(activePolicyName ," - ", healthSystemName);
+            string[] allPolicy = new string[policyList.Count];
+            int i = 0;
+            foreach (IWebElement element in policyList)
+            {
+                allPolicy[i++] = element.Text;
+            }
+            if (allPolicy.Contains(healthSystemPolicyName))
+            {
+                Assert.IsTrue(true, "Health System policy created sucessfully");
+            }
+            else
+            {
+                Assert.IsFalse(true);
+            }
+          
+        }
+
+        public void SelectFacilityForHealthSystemPolicy()
+        {
+            //Thread.Sleep(3000);
+            ObjectRepository.driver.FindElement(FacilityDropdown).Click();
+            IList<IWebElement> storeFacility = null;
+            storeFacility = ObjectRepository.driver.FindElements(FacilityList);
+            int countFacility = storeFacility.Count;
+            List<string> hsFacility = DataModal.healthSystemFacility;
+
+
+            for (int i = 0; i <= countFacility; i++)
+            {
+
+                string SelectFacility = storeFacility[i].Text;
+                for (int j = 0; j <= hsFacility.Count; j++)
+                {
+                    if (SelectFacility.Contains(hsFacility[j]))
+                    {
+                        storeFacility[i].Click();
+                        IList<IWebElement> policyList = ObjectRepository.driver.FindElements(policiesNameList).ToList();
+                        
+                        string[] allPolicy = new string[policyList.Count];
+                        int k = 0;
+                        foreach (IWebElement element in policyList)
+                        {
+                            allPolicy[k++] = element.Text;
+                        }
+
+                    }
+                }
+
+            }
+
+        }
+
+
+
+        public void HSFacilityPolicy()
+        {
+
+        }
 
          }
 }

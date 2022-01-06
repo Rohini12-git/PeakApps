@@ -1,4 +1,5 @@
-﻿Feature: F.PatientQuestionAndAnswer
+﻿@Regression test
+Feature: F.PatientQuestionAndAnswer
 	
 
 @mytag
