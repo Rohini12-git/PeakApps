@@ -3,7 +3,7 @@ Feature: F.PatientQuestionAndAnswer
 	
 
 @mytag
-Scenario Outline: Custom question Audit Scope and DataEntry	
+Scenario Outline: 02.Custom question Audit Scope and DataEntry	
 Given Policy tab redirect link
 And select a facility from facility drop down
 And Activate  <CustomPolicy> to edit
@@ -19,7 +19,7 @@ Examples:
 | CustomPolicy|
 
 
-Scenario Outline: Verify Edit Audit Scope and Data Entry
+Scenario Outline:01. Verify Edit Audit Scope and Data Entry
 Given Policy tab redirect link
 And select a facility from facility drop down
 And Activate a <Policy> to edit

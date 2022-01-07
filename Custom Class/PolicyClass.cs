@@ -360,7 +360,7 @@ namespace PeakApps.Custom_Class
             {
                 Assert.IsTrue(true, "Health system name exists");
             }
-
+            
         }
         public void HSPolicy()
         {
@@ -389,35 +389,62 @@ namespace PeakApps.Custom_Class
 
         public void SelectFacilityForHealthSystemPolicy()
         {
-            //Thread.Sleep(3000);
+            Thread.Sleep(3000);
             ObjectRepository.driver.FindElement(FacilityDropdown).Click();
             IList<IWebElement> storeFacility = null;
-            storeFacility = ObjectRepository.driver.FindElements(FacilityList);
-            int countFacility = storeFacility.Count;
+            //storeFacility = ObjectRepository.driver.FindElements(FacilityList);
+            List<string> FacilityTexts = ObjectRepository.driver.FindElements(FacilityList).Select(iw => iw.Text).ToList();
+            int countFacility = ObjectRepository.driver.FindElements(FacilityList).Count;
             List<string> hsFacility = DataModal.healthSystemFacility;
+            List<List<string>> masterList = new List<List<string>>();
+            //var sameHSFacility = FacilityTexts.Intersect(hsFacility).Count();
 
+            //for (int k=0;k<sameHSFacility;k++)
+            //{
+            //    storeFacility = ObjectRepository.driver.FindElements(FacilityList);
+            //    int index = FacilityTexts.FindIndex(a => a.Contains(hsFacility[k]));
+            //    index.Click();
+            //}
 
-            for (int i = 0; i <= countFacility; i++)
+            for (int i = 0; i < countFacility; i++)
             {
-
+                Thread.Sleep(1000);
+                storeFacility = ObjectRepository.driver.FindElements(FacilityList);
                 string SelectFacility = storeFacility[i].Text;
-                for (int j = 0; j <= hsFacility.Count; j++)
+                for (int j = 0; j < hsFacility.Count; j++)
                 {
+
                     if (SelectFacility.Contains(hsFacility[j]))
                     {
                         storeFacility[i].Click();
-                        IList<IWebElement> policyList = ObjectRepository.driver.FindElements(policiesNameList).ToList();
+                        toggleSwitch();
+                        List<IWebElement> policyList = ObjectRepository.driver.FindElements(policiesNameList).ToList();
+                        List<string> elementTexts = policyList.Select(iw => iw.Text).ToList();
 
-                        string[] allPolicy = new string[policyList.Count];
-                        int k = 0;
-                        foreach (IWebElement element in policyList)
-                        {
-                            allPolicy[k++] = element.Text;
-                        }
+                        ObjectRepository.driver.FindElement(FacilityDropdown).Click();
+
+                        masterList.Add(elementTexts);
 
                     }
+
                 }
 
+            }
+            ObjectRepository.driver.FindElement(By.XPath("//body")).Click();
+            bool isDataMatched = true;
+            for (int k = 1; k < masterList.Count; k++)
+            {
+                var list1 = masterList[k - 1].Intersect(masterList[k]).Count();
+                if (list1 != masterList[k - 1].Count)
+                {
+                    isDataMatched = false;
+                    Console.WriteLine("Data mismatched");
+                    break;
+                }
+            }
+            if (isDataMatched)
+            {
+                Console.WriteLine("Data matched");
             }
 
         }
@@ -430,13 +457,35 @@ namespace PeakApps.Custom_Class
             Assert.IsTrue(isEnableViewPrint, "View/Print button is enable");
 
         }
-        public void ClickViewPrint()
+        public void ClickViewPrint(string Policy, string AuditForm)
         {
+            Thread.Sleep(2000);
             ObjectRepository.driver.FindElement(viewPrintButton).Click();
             IList<IWebElement> options = ObjectRepository.driver.FindElements(popupmenuOption);
-            string option1 = options[1].Text;
-            string option2 = options[2].Text;
+            string option1 = options[0].Text;
+            string option2 = options[1].Text;
+            Assert.AreEqual(Policy, option1);
+            Assert.AreEqual(AuditForm, option2);
+            ObjectRepository.driver.FindElement(viewPrintButton).Click();
 
+        }
+
+        public void Policyclick()
+        {
+
+            ObjectRepository.driver.FindElement(By.XPath("(//div[contains(@class,'popup-menu-option')])[1]")).Click();
+            //string option1 = options[0].Text;
+            //options[0].Click();
+
+
+        }
+        public void Newwindow()
+        {
+            var newTabHandle = ObjectRepository.driver.WindowHandles[1];
+            //Assert.AreEqual(driver.SwitchTo().Window(newTabHandle).Url, "https://enl.3m.com/enl/dontknow_password.jsp");
+            ObjectRepository.driver.SwitchTo().Window(newTabHandle);
+            ObjectRepository.driver.SwitchTo().Window(newTabHandle).Close();
+            ObjectRepository.driver.SwitchTo().Window(ObjectRepository.driver.WindowHandles[0]);
         }
     
 

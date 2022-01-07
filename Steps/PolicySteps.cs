@@ -158,23 +158,53 @@ namespace PeakApps.Steps
         public void ThenItShouldContainsSameHealthSystemNameOfWhichFacilityIsSelected_()
         {
             policy.VerifyHSName();
+            
         }
 
         [Then(@"Policy name should listed in policies with health system name  for which it is created")]
         public void ThenPolicyNameShouldListedInPoliciesWithHealthSystemNameForWhichItIsCreated()
         {
             policy.HSPolicy();
+            Thread.Sleep(5000);
         }
         [Then(@"view/print button of active policy get enabled")]
         public void ThenViewPrintButtonOfActivePolicyGetEnabled()
         {
+            policy.EnableViewPrint();
+        }
+        [Then(@"click on view/print button to verify that popup menu should open with ""(.*)"" and ""(.*)"" as option\.")]
+        public void ThenClickOnViewPrintButtonToVerifyThatPopupMenuShouldOpenWithAndAsOption_(string Policy, string AuditForm)
+        {
+            policy.ClickViewPrint(Policy, AuditForm);
+        }
+        [When(@"click on Policy option")]
+        public void WhenClickOnPolicyOption()
+        {
+            policy.Policyclick();
+        }
+
+        [Then(@"it should open new window of policy")]
+        public void ThenItShouldOpenNewWindowOfPolicy()
+        {
+            policy.Newwindow();
+        }
+
+        [When(@"click on AuditForm option")]
+        public void WhenClickOnAuditFormOption()
+        {
             ScenarioContext.Current.Pending();
         }
 
-        [Then(@"click on button to verify that popup menu should open with ""(.*)"" and ""(.*)"" as option\.")]
-        public void ThenClickOnButtonToVerifyThatPopupMenuShouldOpenWithAndAsOption_(string p0, string p1)
+        [Then(@"it should open new window of AuditForm")]
+        public void ThenItShouldOpenNewWindowOfAuditForm()
         {
             ScenarioContext.Current.Pending();
+        }
+
+        [Then(@"select a facility of health system and toggle health system")]
+        public void ThenSelectAFacilityOfHealthSystemAndToggleHealthSystem()
+        {
+            policy.SelectFacilityForHealthSystemPolicy();
         }
 
 

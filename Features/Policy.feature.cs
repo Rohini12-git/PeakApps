@@ -233,28 +233,6 @@ testRunner.And("Policy name should listed in policies with health system name  f
 #line hidden
             this.ScenarioCleanup();
         }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("06 Verify that policy of health system should be listed in all the facility of th" +
-            "at health system")]
-        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
-        public virtual void _06VerifyThatPolicyOfHealthSystemShouldBeListedInAllTheFacilityOfThatHealthSystem()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("06 Verify that policy of health system should be listed in all the facility of th" +
-                    "at health system", null, new string[] {
-                        "ignore"});
-#line 69
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 70
-testRunner.Given("Facility tab redirect link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 71
-testRunner.Then("goto facility page to get the facilities having name attached with that hs", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 73
-testRunner.Given("Policy tab redirect link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-            this.ScenarioCleanup();
-        }
     }
 }
 #pragma warning restore

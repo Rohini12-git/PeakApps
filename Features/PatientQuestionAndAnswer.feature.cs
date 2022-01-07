@@ -74,13 +74,13 @@ namespace PeakApps.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Custom question Audit Scope and DataEntry")]
+        [NUnit.Framework.DescriptionAttribute("02.Custom question Audit Scope and DataEntry")]
         [NUnit.Framework.CategoryAttribute("mytag")]
         [NUnit.Framework.TestCaseAttribute("patientCustomQs", new string[] {
                 "source:Audit.xlsx:CustomPolicy"}, Category="source:Audit.xlsx:CustomPolicy")]
         [NUnit.Framework.TestCaseAttribute("catheterCustomQs", new string[] {
                 "source:Audit.xlsx:CustomPolicy"}, Category="source:Audit.xlsx:CustomPolicy")]
-        public virtual void CustomQuestionAuditScopeAndDataEntry(string customPolicy, string[] exampleTags)
+        public virtual void _02_CustomQuestionAuditScopeAndDataEntry(string customPolicy, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "mytag"};
@@ -88,7 +88,7 @@ namespace PeakApps.Features
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Custom question Audit Scope and DataEntry", null, @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("02.Custom question Audit Scope and DataEntry", null, @__tags);
 #line 6
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -117,7 +117,7 @@ testRunner.Then("verify the policy qs and answer", ((string)(null)), ((TechTalk.
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Audit Scope and Data Entry")]
+        [NUnit.Framework.DescriptionAttribute("01. Verify Edit Audit Scope and Data Entry")]
         [NUnit.Framework.TestCaseAttribute("3D", new string[] {
                 "source:Audit.xlsx:ActivePolicyList"}, Category="source:Audit.xlsx:ActivePolicyList")]
         [NUnit.Framework.TestCaseAttribute("3E", new string[] {
@@ -144,9 +144,9 @@ testRunner.Then("verify the policy qs and answer", ((string)(null)), ((TechTalk.
                 "source:Audit.xlsx:ActivePolicyList"}, Category="source:Audit.xlsx:ActivePolicyList")]
         [NUnit.Framework.TestCaseAttribute("3C-11B", new string[] {
                 "source:Audit.xlsx:ActivePolicyList"}, Category="source:Audit.xlsx:ActivePolicyList")]
-        public virtual void AuditScopeAndDataEntry(string policy, string[] exampleTags)
+        public virtual void _01_VerifyEditAuditScopeAndDataEntry(string policy, string[] exampleTags)
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Audit Scope and Data Entry", null, exampleTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("01. Verify Edit Audit Scope and Data Entry", null, exampleTags);
 #line 22
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
