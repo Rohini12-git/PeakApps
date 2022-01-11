@@ -55,6 +55,7 @@ namespace PeakApps
                 DirectoryInfo di = Directory.CreateDirectory(dir + "\\Defect_Screenshots\\");
                 string finalpth = pth.Substring(0, pth.LastIndexOf("bin")) + "\\Defect_Screenshots\\" + screenShotName + ".png";
                 localpath = new Uri(finalpth).LocalPath;
+                //localpath = new Uri("https://d3mcdn.3m.com/lem/ui/windows.png").AbsoluteUri;
                 screenshot.SaveAsFile(localpath);
             }
             catch (Exception e)

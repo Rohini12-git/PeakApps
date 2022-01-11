@@ -204,6 +204,7 @@ namespace PeakApps.Steps
         [Then(@"select a facility of health system and toggle health system")]
         public void ThenSelectAFacilityOfHealthSystemAndToggleHealthSystem()
         {
+            Thread.Sleep(3000);
             policy.SelectFacilityForHealthSystemPolicy();
         }
 

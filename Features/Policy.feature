@@ -65,31 +65,31 @@ Then click on finish and make active button
 Then policy name name should prompt in active poliy drop down as selected.
 And Policy name should listed in policies with health system name  for which it is created
 
-#@Ignore
-#Scenario: 06 Verify that policy of health system should be listed in all the facility of that health system
-#Given Facility tab redirect link
-#Then goto facility page to get the facilities having name attached with that hs 
-#
-#Given Policy tab redirect link
-#Then select a facility of health system and toggle health system
-#@Ignore
-#Scenario: 07 Verify view/print of active policy
-#Given Policy tab redirect link
-#When select a health system's facility from facility drop down
-#Then view/print button of active policy get enabled
-#Then click on view/print button to verify that popup menu should open with "Policy" and "Audit Form" as option.
-#@Ignore
-#Scenario: 08 Verify Policy and Audit form of view/print
-#Given Policy tab redirect link
-#When select a health system's facility from facility drop down
-#Then click on view/print button to verify that popup menu should open with "Policy" and "Audit Form" as option.
-#
-#When click on Policy option 
-#Then it should open new window of policy
-#
-#When click on AuditForm option
-#Then it should open new window of AuditForm
-#
+
+Scenario: 06 Verify that policy of health system should be listed in all the facility of that health system
+Given Facility tab redirect link
+Then goto facility page to get the facilities having name attached with that hs 
+
+Given Policy tab redirect link
+Then select a facility of health system and toggle health system
+
+Scenario: 07 Verify view/print of active policy
+Given Policy tab redirect link
+When select a health system's facility from facility drop down
+Then view/print button of active policy get enabled
+Then click on view/print button to verify that popup menu should open with "Policy" and "Audit Form" as option.
+@Ignore
+Scenario: 08 Verify Policy and Audit form of view/print
+Given Policy tab redirect link
+When select a health system's facility from facility drop down
+Then click on view/print button to verify that popup menu should open with "Policy" and "Audit Form" as option.
+
+When click on Policy option 
+Then it should open new window of policy
+
+When click on AuditForm option
+Then it should open new window of AuditForm
+
 
 
 

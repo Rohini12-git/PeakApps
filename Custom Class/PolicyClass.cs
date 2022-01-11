@@ -397,39 +397,62 @@ namespace PeakApps.Custom_Class
             int countFacility = ObjectRepository.driver.FindElements(FacilityList).Count;
             List<string> hsFacility = DataModal.healthSystemFacility;
             List<List<string>> masterList = new List<List<string>>();
-            //var sameHSFacility = FacilityTexts.Intersect(hsFacility).Count();
+            var sameHSFacility = FacilityTexts.Intersect(hsFacility).Count();
 
-            //for (int k=0;k<sameHSFacility;k++)
-            //{
-            //    storeFacility = ObjectRepository.driver.FindElements(FacilityList);
-            //    int index = FacilityTexts.FindIndex(a => a.Contains(hsFacility[k]));
-            //    index.Click();
-            //}
-
-            for (int i = 0; i < countFacility; i++)
+            for (int k = 0; k < sameHSFacility; k++)
             {
-                Thread.Sleep(1000);
-                storeFacility = ObjectRepository.driver.FindElements(FacilityList);
-                string SelectFacility = storeFacility[i].Text;
-                for (int j = 0; j < hsFacility.Count; j++)
+                if (k > 0)
                 {
-
-                    if (SelectFacility.Contains(hsFacility[j]))
-                    {
-                        storeFacility[i].Click();
-                        toggleSwitch();
-                        List<IWebElement> policyList = ObjectRepository.driver.FindElements(policiesNameList).ToList();
-                        List<string> elementTexts = policyList.Select(iw => iw.Text).ToList();
-
-                        ObjectRepository.driver.FindElement(FacilityDropdown).Click();
-
-                        masterList.Add(elementTexts);
-
-                    }
-
+                    ObjectRepository.driver.FindElement(FacilityDropdown).Click();
                 }
+                storeFacility = ObjectRepository.driver.FindElements(FacilityList);
+                int index = FacilityTexts.FindIndex(a => a.Contains(hsFacility[k]));
+                ObjectRepository.driver.FindElements(FacilityList)[index].Click();
+                
+
+                toggleSwitch();
+                Thread.Sleep(5000);
+
+                var policyList = ObjectRepository.driver.FindElements(policiesNameList);
+                var policylistCount = policyList.Count;
+
+                List<string> elementTexts = new List<string>();
+                for(int i = 0; i < policylistCount; i++)
+                {
+                    elementTexts.Add(ObjectRepository.driver.FindElements(policiesNameList)[i].Text);
+                }
+                
+                masterList.Add(elementTexts);
+
 
             }
+
+            //for (int i = 0; i < countFacility; i++)
+            //{
+            //    Thread.Sleep(1000);
+            //    storeFacility = ObjectRepository.driver.FindElements(FacilityList);
+            //    string SelectFacility = storeFacility[i].Text;
+            //    for (int j = 0; j < hsFacility.Count; j++)
+            //    {
+
+            //        if (SelectFacility.Contains(hsFacility[j]))
+            //        {
+            //            Thread.Sleep(2000);
+            //            storeFacility[i].Click();
+            //            toggleSwitch();
+
+            //            List<IWebElement> policyList = ObjectRepository.driver.FindElements(policiesNameList).ToList();
+            //            List<string> elementTexts = policyList.Select(iw => iw.Text).ToList();
+
+            //            ObjectRepository.driver.FindElement(FacilityDropdown).Click();
+
+            //            masterList.Add(elementTexts);
+
+            //        }
+
+            //    }
+
+            //}
             ObjectRepository.driver.FindElement(By.XPath("//body")).Click();
             bool isDataMatched = true;
             for (int k = 1; k < masterList.Count; k++)
