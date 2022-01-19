@@ -560,6 +560,7 @@
     <Compile Include="Custom Exception\NoSuitableDriverFound.cs" />
     <Compile Include="EventHooks.cs" />
     <Compile Include="Features\CompareAuditQs.feature.cs" />
+    <Compile Include="Features\DataEntry.feature.cs" />
     <Compile Include="Features\Facility.feature.cs" />
     <Compile Include="Features\PatientQuestionAndAnswer.feature.cs" />
     <Compile Include="Features\Policy.feature.cs" />
@@ -584,6 +585,7 @@
     <None Include="App.config" />
     <None Include="Features\Audit.xlsx" />
     <None Include="Features\CompareAuditQs.feature" />
+    <None Include="Features\DataEntry.feature" />
     <None Include="Features\Facility.feature" />
     <None Include="Features\PatientQuestionAndAnswer.feature" />
     <None Include="Features\Policy.feature" />

@@ -210,6 +210,7 @@ namespace PeakApps.Steps
         [Then(@"goto facility page to get the facilities having name attached with that hs")]
         public void ThenGotoFacilityPageToGetTheFacilitiesHavingNameAttachedWithThatHs()
         {
+            Thread.Sleep(5000);
             FacilityClass facility = new FacilityClass();
             facility.facilityOfHs();
         }

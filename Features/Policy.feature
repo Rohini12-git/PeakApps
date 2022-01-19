@@ -78,6 +78,8 @@ Given Policy tab redirect link
 When select a health system's facility from facility drop down
 Then view/print button of active policy get enabled
 Then click on view/print button to verify that popup menu should open with "Policy" and "Audit Form" as option.
+
+
 @Ignore
 Scenario: 08 Verify Policy and Audit form of view/print
 Given Policy tab redirect link
